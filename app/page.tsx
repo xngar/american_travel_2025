@@ -11,7 +11,7 @@ export default function Home() {
       <Slider />
 
       <h2 className="flex justify-center items-center text-[50px] text-[#58167D]">
-        ¿ Porque Viajar con American Travel Tour ?
+        ¿ Porque Viajar con American Travel Tour 2?
       </h2>
       <Beneficios />
       <Destinos />
