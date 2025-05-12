@@ -20,9 +20,9 @@ const Beneficio_info: React.FC<BeneficioInfoProps> = ({
         {icono}
       </motion.div>{" "}
       {/* Renderiza el icono aquí */}
-      <div className="flex flex-col justify-center items-center">
-        <h2 className="text-[30px] text-[#58167D] text-center">{titulo}</h2>
-        <h3 className="text-[18px] text-gray-600 ">{descripcion}</h3>
+      <div className="flex flex-col justify-center items-center justify-between gap-4">
+        <h2 className="text-[28px] text-[#548c2f] text-center ">{titulo}</h2>
+        <h3 className="text-[16px] text-[#003F88] ">{descripcion}</h3>
       </div>
     </div>
   );

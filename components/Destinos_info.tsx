@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Destinos_info = () => {
   return (
-    <div className="w-full bg-[#58167D] rounded-2xl">
+    <div className="w-full bg-[#003F88] rounded-2xl">
       {/* Se crea un contenedor con la clase relative para que el contenido
           interno se posicione relativo al contenedor */}
       <motion.div

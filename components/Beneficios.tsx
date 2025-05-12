@@ -8,36 +8,30 @@ import { ThumbsUp } from "lucide-react";
 
 const Beneficios: React.FC = () => {
   return (
-    <div className=" bg-white  p-10 md:pl-30 md:pr-30 gap-10 md:flex-col lg:flex-row sm:flex-col flex-row lg:flex  ">
+    <div className=" bg-white  p-2 md:pl-30 md:pr-30 gap-10 md:grid md:grid-cols-4   ">
       <Beneficio_info
-        icono={<ThumbsUp size={100} color="#58167D" aria-label="garantia" />}
-        titulo="¿Porque Viajar con nosotros?"
-        descripcion="Te ofrecemos una variada gama de hoteles que han sido reconocidos y premiados, a lo largo del todo el mundo."
+        icono={<ThumbsUp size={70} color="#548c2f" aria-label="garantia" />}
+        titulo="Más que un Viaje, una Experiencia"
+        descripcion="Contamos con una amplia selección de hoteles premiados y reconocidos a nivel mundial reconocidos a.reconocidos a nivel mundial. ."
       />
       <Beneficio_info
         icono={
-          <CircleDollarSign
-            size={100}
-            color="#58167D"
-            aria-label="beneficios"
-          />
+          <CircleDollarSign size={70} color="#548c2f" aria-label="beneficios" />
         }
         titulo="Asistencia permanente"
-        descripcion="Te ofrecemos una asistencia integral antes, durante y después de tu viaje, por medio de ejecutivos personalizados y a través de nuestras plataformas tecnológicas."
+        descripcion="Brindamos asistencia completa en cada etapa de tu viaje, con atención personalizada y soporte a través de nuestras plataformas digitales."
       />
       <Beneficio_info
         icono={
-          <MousePointerClick size={100} color="#58167D" aria-label="pagos" />
+          <MousePointerClick size={70} color="#548c2f" aria-label="pagos" />
         }
         titulo="Forma parte de una familia"
-        descripcion="Porque queremos que no seas un cliente más, sino un integrante más de nuestra familia, nos preocupamos de ti y de quienes te acompañan, como debe ser."
+        descripcion="Queremos que te sientas parte de nuestra familia, por eso cuidamos de ti y de quienes viajan contigo, como debe ser."
       />
       <Beneficio_info
-        icono={
-          <ShieldCheck size={100} color="#58167D" aria-label="seguridad" />
-        }
+        icono={<ShieldCheck size={70} color="#548c2f" aria-label="seguridad" />}
         titulo="Paga cuando estés informado"
-        descripcion="Antes de pagar, nos preocupamos de entregarte toda la información que necesitas, antes del viaje, a través de nuestros ejecutivos. Porque viajar informado también es viajar tranquilo."
+        descripcion="Antes de tu pago, te entregamos toda la información necesaria a través de nuestros ejecutivos, porque viajar informado es viajar tranquilo."
       />
     </div>
   );
