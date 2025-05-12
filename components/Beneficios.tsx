@@ -11,8 +11,8 @@ const Beneficios: React.FC = () => {
     <div className=" bg-white  p-10 md:pl-30 md:pr-30 gap-10 md:flex-col lg:flex-row sm:flex-col flex-row lg:flex  ">
       <Beneficio_info
         icono={<ThumbsUp size={100} color="#58167D" aria-label="garantia" />}
-        titulo="Garantía"
-        descripcion="Contamos con sello de calidad turística y somos parte de la Asociación Chilena de Turismo."
+        titulo="¿Porque Viajar con nosotros?"
+        descripcion="Te ofrecemos una variada gama de hoteles que han sido reconocidos y premiados, a lo largo del todo el mundo."
       />
       <Beneficio_info
         icono={
@@ -22,22 +22,22 @@ const Beneficios: React.FC = () => {
             aria-label="beneficios"
           />
         }
-        titulo="Beneficios"
-        descripcion="Apoyamos a cada curso a reunir fondos."
+        titulo="Asistencia permanente"
+        descripcion="Te ofrecemos una asistencia integral antes, durante y después de tu viaje, por medio de ejecutivos personalizados y a través de nuestras plataformas tecnológicas."
       />
       <Beneficio_info
         icono={
           <MousePointerClick size={100} color="#58167D" aria-label="pagos" />
         }
-        titulo="Portal de Pagos"
-        descripcion="Pagas tu viaje a través de tu banco o tarjetas de crédito mediante webpay.cl"
+        titulo="Forma parte de una familia"
+        descripcion="Porque queremos que no seas un cliente más, sino un integrante más de nuestra familia, nos preocupamos de ti y de quienes te acompañan, como debe ser."
       />
       <Beneficio_info
         icono={
           <ShieldCheck size={100} color="#58167D" aria-label="seguridad" />
         }
-        titulo="Seguridad"
-        descripcion="Asistencia en Viaje: Para que viajes con la tranquilidad que necesitas."
+        titulo="Paga cuando estés informado"
+        descripcion="Antes de pagar, nos preocupamos de entregarte toda la información que necesitas, antes del viaje, a través de nuestros ejecutivos. Porque viajar informado también es viajar tranquilo."
       />
     </div>
   );

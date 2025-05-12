@@ -18,7 +18,7 @@ import { Plane } from "lucide-react";
 
 const Menu = () => {
   return (
-    <div className="w-full  bg-[#58167D] flex justify-between p-8 pt-5 items-center ">
+    <div className="w-full  bg-[#003F88]/80 flex justify-between pl-8 items-center z-50 relative left-0 -top-3 mt-0">
       {/* menu mobile */}
       <div className="md:hidden flex">
         <Sheet>
@@ -49,7 +49,7 @@ const Menu = () => {
       />
       {/* fin menu mobile */}
       <div className="lg:w-[200px]">
-        <Image src="/gira.png" width={70} height={70} alt="logo" />
+        <Image src="/gira.png" width={150} height={150} alt="logo" />
       </div>
       <div className="flex justify-around gap-[100px] ">
         <div className=" w-[600px] ">

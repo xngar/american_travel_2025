@@ -4,7 +4,7 @@ import React from "react";
 
 const Formulario: React.FC = () => {
   return (
-    <div className="bg-[#58167D] flex justify-center items-center min-h-screen p-4 pt-12">
+    <div className="bg-[#003F88] flex justify-center items-center min-h-screen p-4 pt-12">
       <form
         className="bg-white p-10 rounded-2xl flex w-[1000px] gap-10"
         onSubmit={async (e) => {
