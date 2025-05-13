@@ -38,18 +38,20 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
   return (
-    <section className="embla bg-amber-300  ">
+    <section className="embla pt-10 ">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container ">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
-              <p className="hidden md:flex">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
-                rerum, adipisci fugit atque esse quaerat aliquid, voluptate
-                velit et eos qui incidunt asperiores. Voluptate, ut numquam vero
-                eaque saepe similique.
-              </p>
+              {/* <div className="embla__slide__number">{index + 1}</div> */}
+              <div className="w-[350px] h-[300px] bg-blue-700 rounded-2xl p-5">
+                <p className="hidden md:flex">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                  rerum, adipisci fugit atque esse quaerat aliquid, voluptate
+                  velit et eos qui incidunt asperiores. Voluptate, ut numquam
+                  vero eaque saepe similique.
+                </p>
+              </div>
             </div>
           ))}
         </div>
