@@ -18,16 +18,60 @@ const Acordion = () => {
 
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
+          <AccordionTrigger>
+            ¿Cómo reservo un paquete turístico?
+          </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            itaque mollitia aut voluptate, numquam eum, distinctio veritatis in
+            quasi magni, accusamus labore amet possimus nihil accusantium? Ex
+            eligendi quae ad.
           </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="item-2">
-          <AccordionTrigger>¿Como de puedo comunicar?</AccordionTrigger>
+          <AccordionTrigger>¿Qué medios de pago aceptan?</AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Voluptatibus pariatur eius consectetur quis fuga rerum, illum, iusto
+            animi quidem quod officia doloremque quas necessitatibus dolores
+            deleniti sint eos, dolorum iste.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-3">
+          <AccordionTrigger>
+            ¿Puedo cambiar la fecha de mi viaje?
+          </AccordionTrigger>
+          <AccordionContent>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Voluptatibus pariatur eius consectetur quis fuga rerum, illum, iusto
+            animi quidem quod officia doloremque quas necessitatibus dolores
+            deleniti sint eos, dolorum iste.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-4">
+          <AccordionTrigger>
+            ¿Qué pasa si quiero cancelar mi reserva?
+          </AccordionTrigger>
+          <AccordionContent>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Voluptatibus pariatur eius consectetur quis fuga rerum, illum, iusto
+            animi quidem quod officia doloremque quas necessitatibus dolores
+            deleniti sint eos, dolorum iste.
+          </AccordionContent>
+        </AccordionItem>
+
+        <AccordionItem value="item-4">
+          <AccordionTrigger>
+            ¿Los precios son por persona o por grupo?
+          </AccordionTrigger>
+          <AccordionContent>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Voluptatibus pariatur eius consectetur quis fuga rerum, illum, iusto
+            animi quidem quod officia doloremque quas necessitatibus dolores
+            deleniti sint eos, dolorum iste.
           </AccordionContent>
         </AccordionItem>
       </Accordion>
