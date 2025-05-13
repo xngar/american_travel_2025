@@ -13,7 +13,7 @@ const Acordion = () => {
     <div className="p-8 md:p-20">
       <div className="flex justify-center items-center gap-2">
         {/* <MessageCircleQuestion /> */}
-        <h2 className="text-[40px] text-[#58167D]">Preguntas Frecuentes</h2>
+        <h2 className="text-[40px] text-[#00296B]">Preguntas Frecuentes</h2>
       </div>
 
       <Accordion type="single" collapsible>

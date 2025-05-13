@@ -8,21 +8,38 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Image from "next/image";
+import { MailQuestion } from "lucide-react";
+import { Headphones } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-[#00296B] p-14 text-white flex flex-col  justify-center items-center pb-4 ">
+      <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 ">
+        <div className="text-[30px]">¿Necesitas Ayuda?</div>
+        <div>
+          <div className="flex flex-col justify-center items-center gap-4">
+            <Headphones />
+            <span>Ventas |</span> +56 9 90895441
+          </div>
+        </div>
+        <div>
+          <div className="flex flex-col justify-center items-center gap-4">
+            <MailQuestion /> <span>Reservas |</span>{" "}
+            vcabrera@americantraveltour.cl
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col gap-7 md:flex-row md:justify-around w-full justify-center items-center">
         <div>
-          <Image src="/gira.png" width={120} height={120} alt="logo" />
+          <Image src="/gira.png" width={200} height={200} alt="logo" />
         </div>
         <div>
           <div>
             <Dialog>
-              <DialogTrigger>¿Quienes somos?</DialogTrigger>
+              <DialogTrigger>Servicio al cliente</DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>¿Quienes somos?</DialogTitle>
+                  <DialogTitle>Servicio al cliente</DialogTitle>
                   <DialogDescription className="text-justify">
                     Somos American Travel Tour Ltda, Agencia de viajes y
                     operador mayorista con una trayectoria de 15 años.
@@ -46,10 +63,10 @@ const Footer = () => {
           {/* seguridad para tus hijos   */}
           <div>
             <Dialog>
-              <DialogTrigger>Seguridad para tus hijos</DialogTrigger>
+              <DialogTrigger>Formas de pago</DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Seguridad para tus hijos</DialogTitle>
+                  <DialogTitle>Formas de pago</DialogTitle>
                   <DialogDescription>
                     Unido a la gran experiencia de nuestros guías profesionales,
                     los programas ofertados poseen un seguro con la cobertura
@@ -71,10 +88,10 @@ const Footer = () => {
           {/* profesionales */}
           <div>
             <Dialog>
-              <DialogTrigger>Profesionales</DialogTrigger>
+              <DialogTrigger>Calidad de servicio</DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Profesionales</DialogTitle>
+                  <DialogTitle>Calidad de servicio</DialogTitle>
                   <DialogDescription className="text-justify">
                     Contamos con personal debidamente calificado y una acabada
                     planificación de nuestros programas, conductores de aprobada
@@ -85,54 +102,9 @@ const Footer = () => {
               </DialogContent>
             </Dialog>
           </div>
-
-          {/* calidad de servicio */}
-          <div>
-            <Dialog>
-              <DialogTrigger>Calidad de Servicio</DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Calidad de Servicio</DialogTitle>
-                  <DialogDescription className="text-justify">
-                    Alternativa de hoteles 3, 4 y 5, y de prestigio en cada
-                    destino.
-                    <br></br> Transporte aéreo y terrestre de primer orden a
-                    nivel nacional e internacional. Representantes exclusivos en
-                    nuestros destinos.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          </div>
-
-          {/* formas de pago */}
-          <div>
-            <Dialog>
-              <DialogTrigger>Formas de Pago</DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Formas de Pago</DialogTitle>
-                  <DialogDescription>
-                    Razón Social: American Travel Tour Ltda. Rut: 76.966.970 – 1
-                    Cuenta Corriente Banco Santander en Pesos N° 61-55539-0
-                    Cuenta Corriente Banco Santander en Dólares No 5100067341
-                    <ul>
-                      <li>Pago al contado vía transferencia electrónica</li>
-                      <li>Pago al contado vía depósito en dólar</li>
-                      <li>Pago con cheques</li>
-                      <li>Pago con tarjeta de crédito bancaria</li>
-                      <li>Pago vía webpay </li>
-                    </ul>
-                    Cada año, más colegios nos prefieren. Vive la experiencia:
-                    MI GIRA CON AMERICAN TRAVEL TOUR.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-          </div>
         </div>
 
-        <div>
+        <div className="flex flex-col">
           <Dialog>
             <DialogTrigger>Póliticas de Explotación Sexual</DialogTrigger>
             <DialogContent>
@@ -141,6 +113,45 @@ const Footer = () => {
                 <DialogDescription>
                   This action cannot be undone. This will permanently delete
                   your account and remove your data from our servers.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog>
+            <DialogTrigger>Politicas de privacidad</DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Políticas de privacidad</DialogTitle>
+                <DialogDescription>
+                  Razón Social: American Travel Tour Ltda. Rut: 76.966.970 – 1
+                  Cuenta Corriente Banco Santander en Pesos N° 61-55539-0 Cuenta
+                  Corriente Banco Santander en Dólares No 5100067341
+                  <ul>
+                    <li>Pago al contado vía transferencia electrónica</li>
+                    <li>Pago al contado vía depósito en dólar</li>
+                    <li>Pago con cheques</li>
+                    <li>Pago con tarjeta de crédito bancaria</li>
+                    <li>Pago vía webpay </li>
+                  </ul>
+                  Cada año, más colegios nos prefieren. Vive la experiencia: MI
+                  GIRA CON AMERICAN TRAVEL TOUR.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog>
+            <DialogTrigger>Términos y condiciones</DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Términos y condiciones</DialogTitle>
+                <DialogDescription className="text-justify">
+                  Alternativa de hoteles 3, 4 y 5, y de prestigio en cada
+                  destino.
+                  <br></br> Transporte aéreo y terrestre de primer orden a nivel
+                  nacional e internacional. Representantes exclusivos en
+                  nuestros destinos.
                 </DialogDescription>
               </DialogHeader>
             </DialogContent>

@@ -19,7 +19,7 @@ const Formulario: React.FC = () => {
         }}
       >
         <div className="w-[100%]">
-          <h2 className="text-[40px] text-[#58167D] text-center">
+          <h2 className="text-[40px] text-[#00296B] text-center">
             ¿Necesita más información?
           </h2>
           <h3 className="text-[30px] pb-5 text-center">Contáctanos!</h3>
@@ -85,7 +85,7 @@ const Formulario: React.FC = () => {
           </label>
 
           <button
-            className="bg-[#58167D] p-2 rounded-md w-full text-white"
+            className="bg-[#00296B] p-2 rounded-md w-full text-white"
             type="submit"
           >
             Enviar
