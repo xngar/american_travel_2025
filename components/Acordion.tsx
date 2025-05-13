@@ -63,7 +63,7 @@ const Acordion = () => {
           </AccordionContent>
         </AccordionItem>
 
-        <AccordionItem value="item-4">
+        <AccordionItem value="item-5">
           <AccordionTrigger>
             ¿Los precios son por persona o por grupo?
           </AccordionTrigger>

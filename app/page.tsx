@@ -1,6 +1,5 @@
 import Beneficios from "@/components/Beneficios";
 
-import Destinos from "@/components/Destinos";
 import EmblaCarousel from "@/components/EmblaCarousel";
 import Footer from "@/components/Footer";
 import Formulario from "@/components/Formulario";
@@ -9,6 +8,7 @@ import { EmblaOptionsType } from "embla-carousel";
 
 import Slider from "@/components/Slider";
 import Acordion from "@/components/Acordion";
+import Paquetes_destinos from "@/components/Paquetes_destinos";
 const OPTIONS: EmblaOptionsType = { slidesToScroll: "auto" };
 const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
@@ -23,7 +23,7 @@ export default function Home() {
       </h2>
       <Beneficios />
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-      <Destinos />
+      <Paquetes_destinos />
       <Acordion />
       <Formulario />
       <Footer />
