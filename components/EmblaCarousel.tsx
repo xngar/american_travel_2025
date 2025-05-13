@@ -8,6 +8,7 @@ import {
 } from "./EmblaCarouselArrowButtons";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
 
 type PropType = {
   slides: number[];
@@ -44,13 +45,17 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
               {/* <div className="embla__slide__number">{index + 1}</div> */}
-              <div className="w-[350px] h-[300px] bg-blue-700 rounded-2xl p-5">
-                <p className="hidden md:flex">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
-                  rerum, adipisci fugit atque esse quaerat aliquid, voluptate
-                  velit et eos qui incidunt asperiores. Voluptate, ut numquam
-                  vero eaque saepe similique.
-                </p>
+              <div className="w-[350px] h-[300px] p-5 relative">
+                <Image
+                  src="/chile.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  alt="chile"
+                  className="rounded-4xl  shadow-md"
+                />
+                <h2 className="text-[#58167D] text-[20px] font-bold absolute top-4 left-4 bg-amber-400 p-2 rounded-2xl">
+                  Chile
+                </h2>
               </div>
             </div>
           ))}
