@@ -41,17 +41,16 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <section className="embla pt-10 ">
       <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container ">
+        <div className="embla__container">
           {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              {/* <div className="embla__slide__number">{index + 1}</div> */}
-              <div className="w-[350px] h-[300px] p-5 relative">
+            <div className="embla__slide flex flex-col md:ml-0" key={index}>
+              <div className="w-full h-[300px] p-5 relative">
                 <Image
                   src="/chile.jpg"
                   layout="fill"
                   objectFit="cover"
                   alt="chile"
-                  className="rounded-4xl  shadow-md"
+                  className="rounded-4xl shadow-md"
                 />
                 <h2 className="text-[#58167D] text-[20px] font-bold absolute top-4 left-4 bg-amber-400 p-2 rounded-2xl">
                   Chile
