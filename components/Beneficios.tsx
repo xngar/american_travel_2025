@@ -6,9 +6,9 @@ import { CircleDollarSign } from "lucide-react";
 import { MousePointerClick } from "lucide-react";
 import { ThumbsUp } from "lucide-react";
 
-const Beneficios: React.FC = () => {
+const Beneficios = () => {
   return (
-    <div className=" bg-white  p-8 md:pl-30 md:pr-30 gap-10 md:grid md:grid-cols-4    ">
+    <div className=" bg-white  p-8 md:pl-30 md:pr-30 gap-10 md:grid md:grid-cols-2 grid grid-cols-1 sm:grid sm:grid-cols-2 lg:grid lg:grid-cols-4 ">
       <Beneficio_info
         icono={<ThumbsUp size={70} color="#548c2f" aria-label="garantia" />}
         titulo="Más que un Viaje, una Experiencia"

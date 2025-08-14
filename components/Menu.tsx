@@ -18,7 +18,7 @@ import { Plane } from "lucide-react";
 
 const Menu = () => {
   return (
-    <div className="w-full  bg-[#003F88]/80 flex justify-between pl-8 items-center z-50 relative left-0 -top-3 mt-0">
+    <div className="w-full  bg-[#003F88]/80 flex justify-between pl-8 items-center z-50 relative left-0  mt-0 h-[65px]">
       {/* menu mobile */}
       <div className="md:hidden flex">
         <Sheet>
@@ -88,8 +88,8 @@ const Menu = () => {
         </div>
         {/* menu movil */}
 
-        <div className="hidden md:flex items-center justify-baseline">
-          <p className="text-white">
+        <div className="hidden md:flex items-center justify-baseline ">
+          <p className="text-white pr-10 text-[14px] md:text-[12px] lg:text-[14px] ">
             Viernes, 02 de Mayo del 2025 / contado: 950 - crédito: 960
           </p>
         </div>

@@ -4,7 +4,7 @@ import React from "react";
 const Paquetes_destinos = () => {
   return (
     <div className="flex  justify-center">
-      <div className="md:grid md:grid-cols-4 grid grid-cols-1 justify-center gap-3">
+      <div className="md:grid sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 grid grid-cols-1 justify-center gap-3">
         <div
           className="flex justify-center items-center bg-gradient-to-t
 "

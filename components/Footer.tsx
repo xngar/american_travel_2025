@@ -13,8 +13,9 @@ import { Headphones } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#00296B] p-14 text-white flex flex-col  justify-center items-center pb-4 ">
-      <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 ">
+    <footer className="bg-[#00296B]  text-white flex flex-col  justify-center items-center  ">
+      {/* NECESITAS AYUDAS? */}
+      <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 pt-8 ">
         <div className="text-[30px]">¿Necesitas Ayuda?</div>
         <div>
           <div className="flex flex-col justify-center items-center gap-4">
@@ -29,6 +30,19 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      {/* 
+      <div className=" relative w-full h-[150px] ">
+        <Image
+          src="/banner-soportejpg.jpg"
+          layout="fill"
+          objectFit="contain"
+          alt="logo"
+          className="pt-2"
+        />
+      </div> */}
+
+      {/* FOOTER LINKS */}
+
       <div className="flex flex-col gap-7 md:flex-row md:justify-around w-full justify-center items-center">
         <div>
           <Image src="/gira.png" width={200} height={200} alt="logo" />
