@@ -19,7 +19,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 export default function Home() {
   return (
     <div className="">
-      <Menu />
+      {/* <Menu /> */}
       <Slider />
 
       <h2 className="flex justify-center items-center text-[50px] font-bold pt-8 pb-8 pl-5 pr-5 leading-tight">
@@ -34,7 +34,7 @@ export default function Home() {
       <Soporte />
 
       <Formulario />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
