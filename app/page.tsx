@@ -1,7 +1,7 @@
 import Beneficios from "@/components/Beneficios";
 
 import EmblaCarousel from "@/components/EmblaCarousel";
-import Footer from "@/components/Footer";
+
 import Formulario from "@/components/Formulario";
 
 import { EmblaOptionsType } from "embla-carousel";
@@ -9,7 +9,7 @@ import { EmblaOptionsType } from "embla-carousel";
 import Slider from "@/components/Slider";
 import Acordion from "@/components/Acordion";
 import Paquetes_destinos from "@/components/Paquetes_destinos";
-import Menu from "@/components/Menu";
+
 import Soporte from "@/components/Soporte";
 
 const OPTIONS: EmblaOptionsType = { slidesToScroll: "auto" };
