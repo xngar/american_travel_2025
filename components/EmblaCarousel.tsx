@@ -19,7 +19,7 @@ type PropType = {
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props;
+  const { options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
   const [programasGiras, setProgramasGiras] = useState<Program[]>([]);
   const [cambio, setCambio] = useState<ResponseExchange | undefined>();
