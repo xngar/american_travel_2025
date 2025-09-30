@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -10,21 +10,16 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 
-import { getCookie } from "cookies-next";
-
 import { AlignJustify } from "lucide-react";
 import { Ship } from "lucide-react";
 import { Sparkles } from "lucide-react";
-import { Luggage } from "lucide-react";
 import { Headset } from "lucide-react";
 import { Plane } from "lucide-react";
 import { ResponseExchange } from "@/app/interfaces/interfaces";
-import { Exchange } from "@/app/api/Services";
-
-const token = getCookie("Token") as string;
+// import { Exchange } from "@/app/api/Services";
 
 const Menu = () => {
-  const [cambio, setCambio] = useState<ResponseExchange | undefined>({
+  const [cambio] = useState<ResponseExchange | undefined>({
     Id: 0,
     UserId: 0,
     CambioContado: 0,
@@ -33,23 +28,6 @@ const Menu = () => {
     FechaDesde: "",
     FechaHasta: "",
   });
-
-  const exChange = async (token: string) => {
-    try {
-      const response = await Exchange(token);
-      if (response) {
-        setCambio(response);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    if (token) {
-      exChange(token);
-    }
-  }, []);
 
   return (
     <div className="w-full  bg-[#003F88]/80 flex justify-between pl-8 items-center z-50 relative left-0  mt-0 h-[65px]">
@@ -65,7 +43,6 @@ const Menu = () => {
 
               <SheetDescription>
                 <li className="animacion-botones">Home American</li>
-                <li className="animacion-botones">Paquetes</li>
                 <li className="animacion-botones">Lujos</li>
                 <li className="animacion-botones">Cruceros</li>
                 <li className="animacion-botones">Contacto</li>
@@ -94,12 +71,7 @@ const Menu = () => {
               </span>
               Home
             </li>
-            <li className="animacion-botones">
-              <span>
-                <Luggage />
-              </span>
-              Paquetes
-            </li>
+
             <li className="animacion-botones">
               <span>
                 <Sparkles />
