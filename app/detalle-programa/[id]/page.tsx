@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { getPrograma } from "@/app/api/Services";
 import { Program } from "@/app/interfaces/interfaces";
 import DetallePrograma from "@/components/DetallePrograma";
