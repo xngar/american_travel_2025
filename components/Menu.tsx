@@ -16,6 +16,7 @@ import { Sparkles } from "lucide-react";
 import { Headset } from "lucide-react";
 import { Plane } from "lucide-react";
 import { ResponseExchange } from "@/app/interfaces/interfaces";
+import Link from "next/link";
 // import { Exchange } from "@/app/api/Services";
 
 const Menu = () => {
@@ -65,12 +66,14 @@ const Menu = () => {
       <div className="flex justify-around gap-[100px] ">
         <div className=" w-[600px] ">
           <ul className="hidden md:flex gap-3.5 justify-around text-white  ">
-            <li className="animacion-botones ">
-              <span>
-                <Plane />
-              </span>
-              Home
-            </li>
+            <Link href="/">
+              <li className="animacion-botones ">
+                <span>
+                  <Plane />
+                </span>
+                Home
+              </li>
+            </Link>
 
             <li className="animacion-botones">
               <span>

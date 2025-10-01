@@ -86,7 +86,7 @@ export const getPrograma = async (id:number) :Promise<ApiResponse<Program>> =>{
 
 export const getAreas = async () :Promise<ApiListResponse<Area[]>> =>{
   try{
-    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/Migira/Areas`);
+    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/att/Areas`);
     const response = result.data as ApiListResponse<Area[]>;
     return response;
   }catch(error){
@@ -104,7 +104,7 @@ export const getAreas = async () :Promise<ApiListResponse<Area[]>> =>{
 
 export const getDestinos = async (id:number) :Promise<ApiListResponse<Destiny[]>> =>{
   try{
-    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/Migira/Destino/${id}`);
+    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/att/Destino/${id}`);
     const response = result.data as ApiListResponse<Destiny[]>;
     return response;
   }catch(error){

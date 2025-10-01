@@ -63,12 +63,12 @@ const Destinos_destacados = ({
       </motion.div>
       <div className="flex flex-col   p-6 bg-white rounded-b-2xl">
         <h4 className="text-sm">
-          <div className="flex pb-3">
+          <div className="flex pb-3 ">
             <MapPin className="" /> <span className="pl-2">{Titulo}</span>
           </div>
         </h4>
-        <h3 className="text-xl font-bold text-[#58167D]">
-          <div className="flex text-[24px] ">
+        <h3 className="text-xl font-bold text-[#1d167d]">
+          <div className="flex text-[24px]">
             {Hotels === undefined ? (
               <span>(Confirmar con Agente)</span>
             ) : (
@@ -80,24 +80,25 @@ const Destinos_destacados = ({
             )}
           </div>
         </h3>
+        <div className="flex flex-col items-end flex-grow">
+          <h5 className="pt-6 text-sm text-right">Desde</h5>
+          <h4 className="text-3xl pb-2 font-bold text-[#1d167d] text-right">
+            USD {precioFormateado}
+          </h4>
+          <small className="text-[14px] mb-2 font-bold text-right">
+            CLP: ${formatNumber(Number(Precio || 0) * cambioContadoValue)}
+          </small>
 
-        <h5 className="pt-6 text-sm">Desde</h5>
-        <h4 className="text-3xl pb-2 font-bold text-[#58167D]">
-          USD {precioFormateado}
-        </h4>
-        <small className="text-[14px] mb-2 font-bold">
-          CLP: ${formatNumber(Number(Precio || 0) * cambioContadoValue)}
-        </small>
-
-        <div className="pb-2">
-          <div className="flex">
-            <Sun />
-            <span className="pl-2">{Dias} días </span> / <Moon />
-            <span className="pl-2">{Noches} noches</span>
+          <div className="pb-2">
+            <div className="flex">
+              <Sun />
+              <span className="pl-2">{Dias} días </span> / <Moon />
+              <span className="pl-2">{Noches} noches</span>
+            </div>
           </div>
+          <p className="pb-4 text-right">{ValorPersona}</p>
         </div>
-        <p className="pb-4">{ValorPersona}</p>
-        <button className="bg-yellow-400 p-3 w-[100%] sm:w-[100%] rounded-full self-end hover:bg-amber-600 transition-all duration-150 cursor-pointer flex justify-center">
+        <button className="bg-[#3365A0] p-3 w-[100%] sm:w-[100%] rounded self-end hover:bg-[#1d167d] transition-all duration-150 cursor-pointer flex justify-center text-white">
           <Link
             href={`/detalle-programa/${IdPrograma}`}
             className="font-semibold"
