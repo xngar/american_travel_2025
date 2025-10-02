@@ -43,10 +43,18 @@ const Menu = () => {
               <SheetTitle></SheetTitle>
 
               <SheetDescription>
-                <li className="animacion-botones">Home American</li>
-                <li className="animacion-botones">Lujos</li>
-                <li className="animacion-botones">Cruceros</li>
-                <li className="animacion-botones">Contacto</li>
+                <Link href="/">
+                  <li className="animacion-botones">Home</li>
+                </Link>
+                <Link href="/lujos">
+                  <li className="animacion-botones">Lujos</li>
+                </Link>
+                <Link href="/cruceros">
+                  <li className="animacion-botones">Cruceros</li>
+                </Link>
+                <Link href="/contacto">
+                  <li className="animacion-botones">Contacto</li>
+                </Link>
               </SheetDescription>
             </SheetHeader>
           </SheetContent>
@@ -74,25 +82,30 @@ const Menu = () => {
                 Home
               </li>
             </Link>
-
-            <li className="animacion-botones">
-              <span>
-                <Sparkles />
-              </span>
-              Lujos
-            </li>
-            <li className="animacion-botones ">
-              <span>
-                <Ship />{" "}
-              </span>
-              Cruceros
-            </li>
-            <li className="animacion-botones">
-              <span>
-                <Headset />
-              </span>
-              Contacto
-            </li>
+            <Link href="/lujos">
+              <li className="animacion-botones">
+                <span>
+                  <Sparkles />
+                </span>
+                Lujos
+              </li>
+            </Link>
+            <Link href="/cruceros">
+              <li className="animacion-botones ">
+                <span>
+                  <Ship />{" "}
+                </span>
+                Cruceros
+              </li>
+            </Link>
+            <Link href="/contacto">
+              <li className="animacion-botones">
+                <span>
+                  <Headset />
+                </span>
+                Contacto
+              </li>
+            </Link>
           </ul>
         </div>
         {/* menu movil */}

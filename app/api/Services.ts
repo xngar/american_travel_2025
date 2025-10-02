@@ -171,7 +171,7 @@ export const getGiras = async () :Promise<ApiListResponse<Program[]>> =>{
 
 export const getLujos = async () :Promise<ApiListResponse<Program[]>> =>{
   try{
-    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/Migira/Lujo`);
+    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/att/Lujo`);
     const response = result.data as ApiListResponse<Program[]>;
     return response;
   }catch(error){
@@ -188,7 +188,7 @@ export const getLujos = async () :Promise<ApiListResponse<Program[]>> =>{
 
 export const getCruceros = async () :Promise<ApiListResponse<Program[]>> =>{
   try{
-    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/Migira/Cruceros`);
+    const result = await axios.get(`${process.env.NEXT_PUBLIC_API_MIGIRA}/api/att/Cruceros`);
     const response = result.data as ApiListResponse<Program[]>;
     return response;
   }catch(error){

@@ -94,7 +94,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                   key={bloqueo.IdPrograma}
                   className="w-full md:w-auto mt-6 mb-8 overflow-hidden rounded-xl shadow-lg"
                 >
-                  <div className="bg-gradient-to-r bg-[#58167D] px-6 py-4">
+                  <div className="bg-gradient-to-r bg-[#00296B] px-6 py-4">
                     <h2 className="text-xl font-semibold text-white text-center">
                       <TituloBloqueos SetSalidaVencida={setSalidaVencida}>
                         {bloqueo.TextoFecha}
@@ -105,16 +105,16 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                     <table className="w-full text-center">
                       <thead className="bg-purple-50">
                         <tr className="text-left">
-                          <th className="px-6 py-3 font-semibold text-purple-800 text-center">
+                          <th className="px-6 py-3 font-semibold text-[#00296B]">
                             Vuelo
                           </th>
-                          <th className="px-6 py-3 font-semibold text-purple-800 text-center">
+                          <th className="px-6 py-3 font-semibold text-[#00296B] text-center">
                             Ruta
                           </th>
-                          <th className="px-6 py-3 font-semibold text-purple-800 text-center">
+                          <th className="px-6 py-3 font-semibold text-[#00296B] text-center">
                             Sale
                           </th>
-                          <th className="px-6 py-3 font-semibold text-purple-800 text-center">
+                          <th className="px-6 py-3 font-semibold text-[#00296B] text-center">
                             Llega
                           </th>
                         </tr>
@@ -158,13 +158,12 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
   return (
     <div>
       {/* Portada */}
-      <div className="w-[80%] h-[300px] relative justify-center mx-auto">
+      <div className="w-[100%] h-[300px] relative justify-center mx-auto">
         <Image
           src={data?.UrlImage || "/chile.jpg"}
           alt="Imagen del programa"
           fill
           style={{ objectFit: "cover" }}
-          className="rounded-4xl mt-2"
         />
       </div>
 
@@ -178,7 +177,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
 
           {data.Subtitulo && (
             <div className="text-3xl flex items-center">
-              <Hotel className="bg-[#58167D] p-1 text-white rounded-md mr-2" />
+              <Hotel className="bg-[#00296B] p-1 text-white rounded-md mr-2" />
               <span>{data?.Subtitulo ?? "Sin información disponible"} </span>
             </div>
           )}
@@ -220,14 +219,14 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
 
         {/* Valores */}
         <div className="bg-gray-200 w-[80%] h-[240px] mx-auto flex flex-col mt-7 rounded-sm p-3 relative">
-          <div className="bg-amber-300 p-2 absolute -top-5 right-0 rounded-md text-sm flex">
+          <div className="bg-blue-500 p-2 absolute -top-5 right-0 rounded-md text-sm flex text-white">
             <Star className="mr-2" /> {data?.Texto}
           </div>
-          <span className="font-bold text-lg text-[#58167D]">
+          <span className="font-bold text-lg text-[#00296B]">
             {data?.Dias} días / {data?.Noches} noches
           </span>
           <span>Precio desde:</span>
-          <span className="text-3xl font-bold text-[#58167D]">
+          <span className="text-3xl font-bold text-[#00296B]">
             USD {formatNumber(data?.Precio || 0)}
           </span>
           <small className="text-[14px]">
@@ -237,20 +236,17 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
         </div>
       </div>
 
-      {/* VUELOS - Se renderiza solo si hay vuelos */}
-      {EspaciosConfirmados({ Bloqueos: data?.Vuelos || [] })}
-
       {/* Incluye */}
       {data?.Incluyes?.length > 0 && (
         <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
           <div className="md:w-1/2">
-            <h2 className="bg-[#58167D] p-2 rounded-md text-white">
+            <h2 className="bg-[#00296B] p-2 rounded-md text-white">
               El programa Incluye
             </h2>
             <ul className="list-none mt-2">
               {data.Incluyes.map((inc, idx) => (
                 <li key={idx} className="flex items-center text-justify">
-                  <Check className="mr-2 text-amber-500 w-4 flex-shrink-0" />{" "}
+                  <Check className="mr-2 text-blue-500 w-4 flex-shrink-0" />{" "}
                   <span>{inc.Texto}</span>
                 </li>
               ))}
@@ -268,7 +264,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
       {/* Itinerario */}
       {data?.Itinerarios?.length > 1 && (
         <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#58167D] p-2 rounded-md text-white">Itinerario</h2>
+          <h2 className="bg-[#00296B] p-2 rounded-md text-white">Itinerario</h2>
           {data.Itinerarios.filter((x) => x.Tipo != "1")
             .sort((a, b) => a.IdItinerario - b.IdItinerario)
             .map((it) => (
@@ -285,12 +281,12 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
       {/* Condiciones */}
       {data?.Condiciones?.length > 0 && (
         <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#58167D] p-2 rounded-md text-white">
+          <h2 className="bg-[#00296B] p-2 rounded-md text-white">
             Condiciones del Programa
           </h2>
           {data.Condiciones.map((c, idx) => (
             <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-amber-500 w-4" />
+              <Check className="mr-2 text-blue-500 w-4" />
               <p>{c.Texto}</p>
             </div>
           ))}
@@ -300,22 +296,25 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
       {/* Actividades */}
       {data?.Actividades?.length > 0 && (
         <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#58167D] p-2 rounded-md text-white">
+          <h2 className="bg-[#00296B] p-2 rounded-md text-white">
             Observaciones
           </h2>
           {data.Actividades.map((act, idx) => (
             <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-amber-500 w-4" />
+              <Check className="mr-2 text-blue-500 w-4" />
               <p>{act.Texto}</p>
             </div>
           ))}
         </div>
       )}
 
+      {/* VUELOS - Se renderiza solo si hay vuelos */}
+      {EspaciosConfirmados({ Bloqueos: data?.Vuelos || [] })}
+
       {/* Valores del programa */}
       {data?.ValoresProgramas?.length > 0 && (
         <div className="w-[80%] mx-auto mt-6 mb-8 overflow-hidden rounded-xl shadow-lg">
-          <div className="bg-gradient-to-r bg-[#58167D]  px-6 py-4">
+          <div className="bg-gradient-to-r bg-[#00296B]  px-6 py-4">
             <h2 className="text-xl font-semibold text-white">
               Valores del Programa
             </h2>
@@ -325,20 +324,20 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
             <table className="w-full">
               <thead>
                 <tr className="bg-purple-50 text-left">
-                  <th className="px-6 py-3 font-semibold text-purple-800">
+                  <th className="px-6 py-3 font-semibold text-[#00296B">
                     Hotel
                   </th>
-                  <th className="px-6 py-3 font-semibold text-purple-800">
+                  <th className="px-6 py-3 font-semibold text-[#00296B]">
                     Habitación
                   </th>
-                  <th className="px-6 py-3 font-semibold text-purple-800">
+                  <th className="px-6 py-3 font-semibold text-[#00296B]">
                     Precio USD
                   </th>
-                  <th className="px-6 py-3 font-semibold text-purple-800">
+                  <th className="px-6 py-3 font-semibold text-[#00296B]">
                     Precio CLP
                   </th>
 
-                  <th className="px-6 py-3 font-semibold text-purple-800">
+                  <th className="px-6 py-3 font-semibold text-[#00296B]">
                     Detalles
                   </th>
                 </tr>
@@ -351,19 +350,19 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-purple-600 w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
                         <span className="font-medium">{valor.Hotel}</span>
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-purple-600 w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
                         {valor.Habitacion}
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-purple-600 w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
                         <span className="font-semibold text-green-600">
                           USD {formatNumber(valor?.Precio || 0)}
                         </span>
@@ -371,7 +370,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-purple-600 w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
                         <span className="font-semibold text-green-600">
                           CLP $
                           {formatNumber(
@@ -382,7 +381,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-purple-600 w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
                         {valor.Text}
                       </div>
                     </td>
