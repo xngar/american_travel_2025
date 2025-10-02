@@ -13,14 +13,25 @@ import { Headphones } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#00296B]  text-white flex flex-col  justify-center items-center  ">
+    <footer
+      id="contacto"
+      className="bg-[#00296B]  text-white flex flex-col  justify-center items-center  "
+    >
       {/* NECESITAS AYUDAS? */}
       <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 pt-8 ">
         <div className="text-[30px]">¿Necesitas Ayuda?</div>
         <div>
           <div className="flex flex-col justify-center items-center gap-4">
             <Headphones />
-            <span>Ventas |</span> +56 9 90895441
+            <span>Ventas |</span>
+            <a
+              href="https://wa.me/56990895441"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              +56 9 90895441
+            </a>
           </div>
         </div>
         <div>

@@ -12,29 +12,31 @@ const Lujos = () => {
 
   useEffect(() => {
     const cargarDatos = async () => {
-      try {
-        setError(null);
-        setLoading(true);
-        // Ejecutamos ambas peticiones en paralelo para mayor eficiencia
-        const [lujosResponse, exchangeResponse] = await Promise.all([
-          getLujos(),
-          Exchange(),
-        ]);
+      setLoading(true);
+      setError(null);
+      setTimeout(async () => {
+        try {
+          // Ejecutamos ambas peticiones en paralelo para mayor eficiencia
+          const [lujosResponse, exchangeResponse] = await Promise.all([
+            getLujos(),
+            Exchange(),
+          ]);
 
-        if (lujosResponse.statusCode === 200) {
-          setProgramasGiras(lujosResponse.value.entities);
-        } else {
-          throw new Error("No se pudieron cargar los datos de Lujos.");
+          if (lujosResponse.statusCode === 200) {
+            setProgramasGiras(lujosResponse.value.entities);
+          } else {
+            throw new Error("No se pudieron cargar los datos de Lujos.");
+          }
+          setCambio(exchangeResponse);
+        } catch (err) {
+          console.error("Error fetching data in Lujos component:", err);
+          setError(
+            "Hubo un problema al cargar la información. Por favor, intenta de nuevo más tarde."
+          );
+        } finally {
+          setLoading(false);
         }
-        setCambio(exchangeResponse);
-      } catch (err) {
-        console.error("Error fetching data in Lujos component:", err);
-        setError(
-          "Hubo un problema al cargar la información. Por favor, intenta de nuevo más tarde."
-        );
-      } finally {
-        setLoading(false);
-      }
+      }, 1000);
     };
     cargarDatos();
   }, []);

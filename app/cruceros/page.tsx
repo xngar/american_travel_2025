@@ -12,29 +12,31 @@ const Cruceros = () => {
 
   useEffect(() => {
     const cargarDatos = async () => {
-      try {
-        setError(null);
-        setLoading(true);
-        // Ejecutamos ambas peticiones en paralelo para mayor eficiencia
-        const [crucerosResponse, exchangeResponse] = await Promise.all([
-          getCruceros(),
-          Exchange(),
-        ]);
+      setLoading(true);
+      setError(null);
+      setTimeout(async () => {
+        try {
+          // Ejecutamos ambas peticiones en paralelo para mayor eficiencia
+          const [crucerosResponse, exchangeResponse] = await Promise.all([
+            getCruceros(),
+            Exchange(),
+          ]);
 
-        if (crucerosResponse.statusCode === 200) {
-          setProgramasGiras(crucerosResponse.value.entities);
-        } else {
-          throw new Error("No se pudieron cargar los datos de los cruceros.");
+          if (crucerosResponse.statusCode === 200) {
+            setProgramasGiras(crucerosResponse.value.entities);
+          } else {
+            throw new Error("No se pudieron cargar los datos de los cruceros.");
+          }
+          setCambio(exchangeResponse);
+        } catch (err) {
+          console.error("Error fetching data in Cruceros component:", err);
+          setError(
+            "Hubo un problema al cargar la información. Por favor, intenta de nuevo más tarde."
+          );
+        } finally {
+          setLoading(false);
         }
-        setCambio(exchangeResponse);
-      } catch (err) {
-        console.error("Error fetching data in Cruceros component:", err);
-        setError(
-          "Hubo un problema al cargar la información. Por favor, intenta de nuevo más tarde."
-        );
-      } finally {
-        setLoading(false);
-      }
+      }, 1000);
     };
     cargarDatos();
   }, []);
@@ -57,8 +59,8 @@ const Cruceros = () => {
   return (
     <div className=" bg-white ">
       <div className="bg-white flex items-center justify-center flex-col p-4 text-center">
-        <h2 className="text-[60px] text-[#58167D]">Cruceros</h2>
-        <h3 className="text-[30px] text-[#58167D]">
+        <h2 className="text-[60px] text-[#002055]">Cruceros</h2>
+        <h3 className="text-[30px] text-[#002055]">
           Vive una experiencia de viaje inigualable
         </h3>
       </div>
