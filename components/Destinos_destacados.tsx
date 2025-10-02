@@ -98,15 +98,15 @@ const Destinos_destacados = ({
           </div>
           <p className="pb-4 text-right">{ValorPersona}</p>
         </div>
-        <button className="bg-[#3365A0] p-3 w-[100%] sm:w-[100%] rounded self-end hover:bg-[#1d167d] transition-all duration-150 cursor-pointer flex justify-center text-white">
-          <Link
-            href={`/detalle-programa/${IdPrograma}`}
-            className="font-semibold"
-          >
+        <Link
+          href={`/detalle-programa/${IdPrograma}`}
+          className="font-semibold"
+        >
+          <button className="bg-[#3365A0] p-3 w-[100%] sm:w-[100%] rounded self-end hover:bg-[#1d167d] transition-all duration-150 cursor-pointer flex justify-center text-white">
             Ver detalles
-          </Link>{" "}
-          <ChevronRight />
-        </button>
+            <ChevronRight />
+          </button>
+        </Link>{" "}
       </div>
     </div>
   );

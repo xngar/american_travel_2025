@@ -240,6 +240,78 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
       {/* VUELOS - Se renderiza solo si hay vuelos */}
       {EspaciosConfirmados({ Bloqueos: data?.Vuelos || [] })}
 
+      {/* Incluye */}
+      {data?.Incluyes?.length > 0 && (
+        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
+          <div className="md:w-1/2">
+            <h2 className="bg-[#58167D] p-2 rounded-md text-white">
+              El programa Incluye
+            </h2>
+            <ul className="list-none mt-2">
+              {data.Incluyes.map((inc, idx) => (
+                <li key={idx} className="flex items-center text-justify">
+                  <Check className="mr-2 text-amber-500 w-4 flex-shrink-0" />{" "}
+                  <span>{inc.Texto}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="relative md:w-1/2 aspect-video overflow-hidden rounded-md">
+            <div
+              className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
+              dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Itinerario */}
+      {data?.Itinerarios?.length > 1 && (
+        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
+          <h2 className="bg-[#58167D] p-2 rounded-md text-white">Itinerario</h2>
+          {data.Itinerarios.filter((x) => x.Tipo != "1")
+            .sort((a, b) => a.IdItinerario - b.IdItinerario)
+            .map((it) => (
+              <div key={it.Dia} className="mb-4">
+                <h3 className="font-bold text-lg">
+                  Día {it.Dia} | {it.Actividad}
+                </h3>
+                <p className="text-justify">{it.Cuerpo}</p>
+              </div>
+            ))}
+        </div>
+      )}
+
+      {/* Condiciones */}
+      {data?.Condiciones?.length > 0 && (
+        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
+          <h2 className="bg-[#58167D] p-2 rounded-md text-white">
+            Condiciones del Programa
+          </h2>
+          {data.Condiciones.map((c, idx) => (
+            <div key={idx} className="mt-2 flex">
+              <Check className="mr-2 text-amber-500 w-4" />
+              <p>{c.Texto}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Actividades */}
+      {data?.Actividades?.length > 0 && (
+        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
+          <h2 className="bg-[#58167D] p-2 rounded-md text-white">
+            Observaciones
+          </h2>
+          {data.Actividades.map((act, idx) => (
+            <div key={idx} className="mt-2 flex">
+              <Check className="mr-2 text-amber-500 w-4" />
+              <p>{act.Texto}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
       {/* Valores del programa */}
       {data?.ValoresProgramas?.length > 0 && (
         <div className="w-[80%] mx-auto mt-6 mb-8 overflow-hidden rounded-xl shadow-lg">
@@ -319,78 +391,6 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
               </tbody>
             </table>
           </div>
-        </div>
-      )}
-
-      {/* Incluye */}
-      {data?.Incluyes?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
-          <div className="md:w-1/2">
-            <h2 className="bg-[#58167D] p-2 rounded-md text-white">
-              El programa Incluye
-            </h2>
-            <ul className="list-none mt-2">
-              {data.Incluyes.map((inc, idx) => (
-                <li key={idx} className="flex items-center text-justify">
-                  <Check className="mr-2 text-amber-500 w-4 flex-shrink-0" />{" "}
-                  <span>{inc.Texto}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="relative md:w-1/2 aspect-video overflow-hidden rounded-md">
-            <div
-              className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
-              dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Itinerario */}
-      {data?.Itinerarios?.length > 1 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#58167D] p-2 rounded-md text-white">Itinerario</h2>
-          {data.Itinerarios.filter((x) => x.Tipo != "1")
-            .sort((a, b) => a.IdItinerario - b.IdItinerario)
-            .map((it) => (
-              <div key={it.Dia} className="mb-4">
-                <h3 className="font-bold text-lg">
-                  Día {it.Dia} | {it.Actividad}
-                </h3>
-                <p className="text-justify">{it.Cuerpo}</p>
-              </div>
-            ))}
-        </div>
-      )}
-
-      {/* Condiciones */}
-      {data?.Condiciones?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#58167D] p-2 rounded-md text-white">
-            Condiciones del Programa
-          </h2>
-          {data.Condiciones.map((c, idx) => (
-            <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-amber-500 w-4" />
-              <p>{c.Texto}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Actividades */}
-      {data?.Actividades?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#58167D] p-2 rounded-md text-white">
-            Observaciones
-          </h2>
-          {data.Actividades.map((act, idx) => (
-            <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-amber-500 w-4" />
-              <p>{act.Texto}</p>
-            </div>
-          ))}
         </div>
       )}
     </div>
