@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Sheet,
   SheetContent,
@@ -17,10 +17,26 @@ import { Headset } from "lucide-react";
 import { Plane } from "lucide-react";
 import { ResponseExchange } from "@/app/interfaces/interfaces";
 import Link from "next/link";
+import { Exchange } from "@/app/api/Services";
 // import { Exchange } from "@/app/api/Services";
 
 const Menu = () => {
-  const [cambio] = useState<ResponseExchange | undefined>({
+  const [fecha, setFecha] = useState("");
+  useEffect(() => {
+    const hoy = new Date();
+
+    const opciones: Intl.DateTimeFormatOptions = {
+      weekday: "long", // día de la semana (viernes)
+      day: "2-digit", // día (02)
+      month: "long", // mes (mayo)
+      year: "numeric", // año (2025)
+    };
+
+    const fechaFormateada = hoy.toLocaleDateString("es-ES", opciones);
+    setFecha(fechaFormateada);
+  }, []);
+
+  const [cambio, setCambio] = useState<ResponseExchange | undefined>({
     Id: 0,
     UserId: 0,
     CambioContado: 0,
@@ -29,6 +45,21 @@ const Menu = () => {
     FechaDesde: "",
     FechaHasta: "",
   });
+
+  const exChange = async () => {
+    try {
+      const response = await Exchange();
+      if (response) {
+        setCambio(response);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    exChange();
+  }, []);
 
   return (
     <div className="w-full  bg-[#003F88]/80 flex justify-between pl-8 items-center z-50 relative left-0  mt-0 h-[65px]">
@@ -112,7 +143,7 @@ const Menu = () => {
 
         <div className="hidden md:flex items-center justify-baseline ">
           <p className="text-white pr-10 text-[14px] md:text-[12px] lg:text-[14px] ">
-            Viernes, 02 de Mayo del 2025 / contado: {cambio?.CambioContado} -
+            {fecha} <br /> cambio contado: {cambio?.CambioContado} - cambio
             crédito: {cambio?.CambioCredito}
           </p>
         </div>
