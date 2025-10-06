@@ -54,10 +54,10 @@ const Destinos = () => {
       <div className="relative w-full h-[200px]">
         <Image src="/default.jpeg" alt="logo" fill className="object-cover" />
       </div>
-      <h1 className="text-3xl font-bold text-purple-800 text-center mt-6">
+      <h1 className="text-3xl font-bold text-gris-oscuro text-center mt-6">
         {areaName.toUpperCase()}
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-4">
         {loading
           ? Array.from({ length: 4 }).map((_, index) => (
               <SkeletonCard key={index} />

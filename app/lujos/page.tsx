@@ -93,7 +93,7 @@ const Lujos = () => {
     <div className=" bg-white ">
       <div className="bg-white flex items-center justify-center flex-col p-4 text-center">
         <h2 className="text-[60px] text-gris-oscuro">Lujos</h2>
-        <h3 className="text-[30px] text-gris-oscuro">
+        <h3 className="text-[30px] text-gris-claro">
           Vive una experiencia de viaje inigualable
         </h3>
       </div>

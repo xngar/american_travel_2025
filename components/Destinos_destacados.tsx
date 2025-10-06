@@ -68,9 +68,18 @@ const Destinos_destacados = ({
           </div>
         </h4>
         <h3 className="text-xl font-bold text-amarillo-att ">
-          <div className="flex text-[24px]">
+          <div className="flex flex-col text-[24px]">
             {Hotels === undefined ? (
-              <span>(Confirmar con Agente)</span>
+              <>
+                <div className="flex ">
+                  <Hotel className="inline mb-1" />
+                  <span className="text-shadow-sm">--</span>
+                </div>
+                <br></br>{" "}
+                <small className="ml-2 text-black">
+                  (Confirmar con Agente)
+                </small>
+              </>
             ) : (
               <span className="">
                 <Hotel className="inline mb-1" />
@@ -99,7 +108,9 @@ const Destinos_destacados = ({
               <span className="pl-2">{Noches} noches</span>
             </div>
           </div>
-          <p className="pb-4 text-right">{ValorPersona}</p>
+          <p className="pb-4 text-right">
+            {ValorPersona ? ValorPersona : "Sin información disponible"}
+          </p>
         </div>
         <button className="bg-amarillo-att p-3 w-[100%] sm:w-[100%] rounded self-end hover:bg-gris-oscuro transition-all duration-150 cursor-pointer flex justify-center text-white">
           <Link

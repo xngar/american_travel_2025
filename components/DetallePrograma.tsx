@@ -92,9 +92,9 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
               (bloqueo) => (
                 <div
                   key={bloqueo.IdPrograma}
-                  className="w-full md:w-auto mt-6 mb-8 overflow-hidden rounded-xl shadow-lg"
+                  className="w-full md:w-auto mt-6 mb-8 overflow-hidden shadow-lg"
                 >
-                  <div className="bg-gradient-to-r bg-[#00296B] px-6 py-4">
+                  <div className="bg-gradient-to-r bg-gris-oscuro px-6 py-4">
                     <h2 className="text-xl font-semibold text-white text-center">
                       <TituloBloqueos SetSalidaVencida={setSalidaVencida}>
                         {bloqueo.TextoFecha}
@@ -105,16 +105,16 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                     <table className="w-full text-center">
                       <thead className="bg-purple-50">
                         <tr className="text-left">
-                          <th className="px-6 py-3 font-semibold text-[#00296B]">
+                          <th className="px-6 py-3 font-semibold text-gris-claro">
                             Vuelo
                           </th>
-                          <th className="px-6 py-3 font-semibold text-[#00296B] text-center">
+                          <th className="px-6 py-3 font-semibold text-gris-claro text-center">
                             Ruta
                           </th>
-                          <th className="px-6 py-3 font-semibold text-[#00296B] text-center">
+                          <th className="px-6 py-3 font-semibold text-gris-claro text-center">
                             Sale
                           </th>
-                          <th className="px-6 py-3 font-semibold text-[#00296B] text-center">
+                          <th className="px-6 py-3 font-semibold text-gris-claro text-center">
                             Llega
                           </th>
                         </tr>
@@ -166,7 +166,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
           style={{ objectFit: "cover" }}
         />
       </div>
-
+      {/* Informacion del programa */}
       <div className="flex w-[95%] md:w-[80%] mx-auto flex-col md:flex-row gap-6 justify-between">
         <div className="justify-start mx-auto w-[100%] flex flex-col mt-4">
           {/* Contenedor para el título con el icono MapPin */}
@@ -177,7 +177,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
 
           {data.Subtitulo && (
             <div className="text-3xl flex items-center">
-              <Hotel className="bg-[#00296B] p-1 text-white rounded-md mr-2" />
+              <Hotel className="bg-amarillo-att p-1 text-white rounded-md mr-2" />
               <span>{data?.Subtitulo ?? "Sin información disponible"} </span>
             </div>
           )}
@@ -218,45 +218,51 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
         </div>
 
         {/* Valores */}
-        <div className="bg-gray-200 w-[80%] h-[240px] mx-auto flex flex-col mt-7 rounded-sm p-3 relative">
-          <div className="bg-blue-500 p-2 absolute -top-5 right-0 rounded-md text-sm flex text-white">
-            <Star className="mr-2" /> {data?.Texto}
-          </div>
-          <span className="font-bold text-lg text-[#00296B]">
-            {data?.Dias} días / {data?.Noches} noches
-          </span>
-          <span>Precio desde:</span>
-          <span className="text-3xl font-bold text-[#00296B]">
-            USD {formatNumber(data?.Precio || 0)}
-          </span>
-          <small className="text-[14px]">
-            CLP ${formatNumber((data?.Precio || 0) * cambioContadoValue)}
-          </small>
-          <span>Incluye impuestos, tasas y cargos</span>
-        </div>
       </div>
 
       {/* Incluye */}
       {data?.Incluyes?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
+        <div className="w-[80%] mx-auto mt-4  rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
           <div className="md:w-1/2">
-            <h2 className="bg-[#00296B] p-2 rounded-md text-white">
+            <h2 className="bg-gris-oscuro p-2  text-white">
               El programa Incluye
             </h2>
             <ul className="list-none mt-2">
               {data.Incluyes.map((inc, idx) => (
                 <li key={idx} className="flex items-center text-justify">
-                  <Check className="mr-2 text-blue-500 w-4 flex-shrink-0" />{" "}
+                  <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />{" "}
                   <span>{inc.Texto}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="relative md:w-1/2 aspect-video overflow-hidden rounded-md">
-            <div
-              className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
-              dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
-            />
+          <div className="md:w-1/2 flex flex-col md:flex-col gap-4 items-center">
+            {/* PRECIOS */}
+            <div>
+              <div className=" w-[450px] h-[240px] mx-auto flex flex-col -mt-2 rounded-sm p-3 relative">
+                {/* <div className="bg-blue-500 p-2 absolute -top-5 right-0 rounded-md text-sm flex text-white">
+                  <Star className="mr-2" /> {data?.Texto}
+                </div> */}
+                <span className="font-bold text-lg text-gris-claro">
+                  {data?.Dias} días / {data?.Noches} noches
+                </span>
+                <span>Precio desde:</span>
+                <span className="text-3xl font-bold text-white text-shadow-md bg-amarillo-att p-4">
+                  USD {formatNumber(data?.Precio || 0)}
+                </span>
+                <small className="text-[14px] font-bold text-white text-shadow-md bg-amarillo-att p-4 mt-2">
+                  CLP ${formatNumber((data?.Precio || 0) * cambioContadoValue)}
+                </small>
+                <span>Incluye impuestos, tasas y cargos</span>
+                <span>{data?.Texto}</span>
+              </div>
+            </div>
+            <div className="relative md:w-[80%] aspect-video overflow-hidden rounded-md">
+              <div
+                className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
+                dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
+              />
+            </div>
           </div>
         </div>
       )}
@@ -264,7 +270,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
       {/* Itinerario */}
       {data?.Itinerarios?.length > 1 && (
         <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#00296B] p-2 rounded-md text-white">Itinerario</h2>
+          <h2 className="bg-gris-oscuro p-2  text-white">Itinerario</h2>
           {data.Itinerarios.filter((x) => x.Tipo != "1")
             .sort((a, b) => a.IdItinerario - b.IdItinerario)
             .map((it) => (
@@ -280,13 +286,13 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
 
       {/* Condiciones */}
       {data?.Condiciones?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#00296B] p-2 rounded-md text-white">
+        <div className="w-[80%] mx-auto mt-4 rounded-md p-4 mb-4">
+          <h2 className="bg-gris-oscuro p-2  text-white">
             Condiciones del Programa
           </h2>
           {data.Condiciones.map((c, idx) => (
             <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-blue-500 w-4" />
+              <Check className="mr-2 text-gris-oscuro w-4" />
               <p>{c.Texto}</p>
             </div>
           ))}
@@ -295,13 +301,11 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
 
       {/* Actividades */}
       {data?.Actividades?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-[#00296B] p-2 rounded-md text-white">
-            Observaciones
-          </h2>
+        <div className="w-[80%] mx-auto mt-4   rounded-md p-4 mb-4">
+          <h2 className="bg-gris-oscuro p-2  text-white">Observaciones</h2>
           {data.Actividades.map((act, idx) => (
             <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-blue-500 w-4" />
+              <Check className="mr-2 text-gris-oscuro w-4" />
               <p>{act.Texto}</p>
             </div>
           ))}
@@ -313,8 +317,8 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
 
       {/* Valores del programa */}
       {data?.ValoresProgramas?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-6 mb-8 overflow-hidden rounded-xl shadow-lg">
-          <div className="bg-gradient-to-r bg-[#00296B]  px-6 py-4">
+        <div className="w-[80%] mx-auto mt-6 mb-8 overflow-hidden  shadow-lg">
+          <div className="bg-gradient-to-r bg-gris-oscuro px-6 py-4">
             <h2 className="text-xl font-semibold text-white">
               Valores del Programa
             </h2>
@@ -327,17 +331,17 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                   <th className="px-6 py-3 font-semibold text-[#00296B">
                     Hotel
                   </th>
-                  <th className="px-6 py-3 font-semibold text-[#00296B]">
+                  <th className="px-6 py-3 font-semibold text-gris-claro">
                     Habitación
                   </th>
-                  <th className="px-6 py-3 font-semibold text-[#00296B]">
+                  <th className="px-6 py-3 font-semibold text-gris-claro">
                     Precio USD
                   </th>
-                  <th className="px-6 py-3 font-semibold text-[#00296B]">
+                  <th className="px-6 py-3 font-semibold text-gris-claro">
                     Precio CLP
                   </th>
 
-                  <th className="px-6 py-3 font-semibold text-[#00296B]">
+                  <th className="px-6 py-3 font-semibold text-gris-claro">
                     Detalles
                   </th>
                 </tr>
@@ -350,19 +354,19 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                   >
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />
                         <span className="font-medium">{valor.Hotel}</span>
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />
                         {valor.Habitacion}
                       </div>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />
                         <span className="font-semibold text-green-600">
                           USD {formatNumber(valor?.Precio || 0)}
                         </span>
@@ -370,7 +374,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />
                         <span className="font-semibold text-green-600">
                           CLP $
                           {formatNumber(
@@ -381,7 +385,7 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center">
-                        <Check className="mr-2 text-[#00296B] w-4 flex-shrink-0" />
+                        <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />
                         {valor.Text}
                       </div>
                     </td>
