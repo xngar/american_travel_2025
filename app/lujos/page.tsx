@@ -28,15 +28,15 @@ const Lujos = () => {
   //     fetchLujos();
   //   }, []);
 
-  useEffect(() => {
-    const llamarFuncion = async () => {
-      try {
-        const respuesta = await getLujos();
-      } catch (error) {
-      } finally {
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   const llamarFuncion = async () => {
+  //     try {
+  //       const respuesta = await getLujos();
+  //     } catch (error) {
+  //     } finally {
+  //     }
+  //   };
+  // }, []);
 
   const [programasGiras, setProgramasGiras] = useState<Program[]>([]);
   const [cambio, setCambio] = useState<ResponseExchange | undefined>();
