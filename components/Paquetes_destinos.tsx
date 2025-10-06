@@ -58,7 +58,7 @@ const Paquetes_destinos = () => {
                       className="rounded-4xl  shadow-md"
                     />
                     <h2 className="botones-paquetes">{area.Nombre}</h2>
-                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-800 to-transparent z-10 rounded-4xl"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-gris-claro to-transparent z-10 rounded-4xl"></div>
                   </div>
                 </div>
               </Link>

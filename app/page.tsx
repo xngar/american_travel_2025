@@ -20,7 +20,7 @@ export default function Home() {
       <Slider />
 
       <h2 className="flex justify-center items-center text-[50px] font-bold pt-8 pb-8 pl-5 pr-5 leading-tight">
-        <span className="bg-gradient-to-r from-[#00296B] to-[#d526db] bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-gris-oscuro to-gris-claro bg-clip-text text-transparent">
           ¿ Porque Viajar con American Travel Tour?
         </span>
       </h2>

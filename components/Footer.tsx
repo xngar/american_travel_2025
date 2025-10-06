@@ -15,10 +15,10 @@ const Footer = () => {
   return (
     <footer
       id="contacto"
-      className="bg-[#00296B]  text-white flex flex-col  justify-center items-center  "
+      className="bg-gris-claro  text-white flex flex-col  justify-center items-center  "
     >
       {/* NECESITAS AYUDAS? */}
-      <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 pt-8 ">
+      <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 pt-8 bg-gris-oscuro">
         <div className="text-[30px]">¿Necesitas Ayuda?</div>
         <div>
           <div className="flex flex-col justify-center items-center gap-4">
@@ -54,7 +54,7 @@ const Footer = () => {
 
       {/* FOOTER LINKS */}
 
-      <div className="flex flex-col gap-7 md:flex-row md:justify-around w-full justify-center items-center">
+      <div className="flex flex-col gap-7 md:flex-row md:justify-around w-full justify-center items-center bg-gris-claro">
         <div>
           <Image src="/gira.png" width={200} height={200} alt="logo" />
         </div>
@@ -184,10 +184,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 bg-gris-claro">
         <p>© 2025: American Travel Tour</p>
       </div>
-      <div>
+      <div className=" bg-gris-claro">
         <p className="text-xs">
           Sitio desarrollado por{" "}
           <a href="www.upcode.cl" target="_blank">

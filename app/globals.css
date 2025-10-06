@@ -41,6 +41,10 @@
 }
 
 @theme inline {
+  --color-gris-oscuro:#2F3840;
+  --color-gris-claro:#64696C;
+  --color-amarillo-att:#E0A800;
+  --color-gris-att:#E4E9EC;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

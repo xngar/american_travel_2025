@@ -62,7 +62,7 @@ const Menu = () => {
   }, []);
 
   return (
-    <div className="w-full  bg-[#003F88]/80 flex justify-between pl-8 items-center z-50 relative left-0  mt-0 h-[65px]">
+    <div className="w-full  bg-gris-oscuro flex justify-between pl-8 items-center z-50 relative left-0  mt-0 h-[65px]">
       {/* menu mobile */}
       <div className="md:hidden flex">
         <Sheet>

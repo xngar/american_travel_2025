@@ -5,6 +5,39 @@ import React, { useEffect, useState } from "react";
 import Destinos_destacados from "@/components/Destinos_destacados";
 
 const Lujos = () => {
+  // useEffect(() => {
+  //     // 💡 La llamada a la función de servicio debe estar aquí
+  //     const fetchLujos = async () => {
+  //       try {
+  //         setIsLoading(true);
+  //         setError(null);
+
+  //         // 📞 Llama a la función de servicio
+  //         const response = await getLujos();
+
+  //         // Asume que la respuesta tiene una propiedad 'entities'
+  //         setProgramas(response.entities || []);
+  //       } catch (err) {
+  //         console.error('Error al cargar los programas de Lujo en el cliente:', err);
+  //         setError('No se pudieron cargar los programas de lujo. Intente de nuevo más tarde.');
+  //       } finally {
+  //         setIsLoading(false);
+  //       }
+  //     };
+
+  //     fetchLujos();
+  //   }, []);
+
+  useEffect(() => {
+    const llamarFuncion = async () => {
+      try {
+        const respuesta = await getLujos();
+      } catch (error) {
+      } finally {
+      }
+    };
+  }, []);
+
   const [programasGiras, setProgramasGiras] = useState<Program[]>([]);
   const [cambio, setCambio] = useState<ResponseExchange | undefined>();
   const [loading, setLoading] = useState(true);
@@ -59,8 +92,8 @@ const Lujos = () => {
   return (
     <div className=" bg-white ">
       <div className="bg-white flex items-center justify-center flex-col p-4 text-center">
-        <h2 className="text-[60px] text-[#58167D]">Lujos</h2>
-        <h3 className="text-[30px] text-[#58167D]">
+        <h2 className="text-[60px] text-gris-oscuro">Lujos</h2>
+        <h3 className="text-[30px] text-gris-oscuro">
           Vive una experiencia de viaje inigualable
         </h3>
       </div>
