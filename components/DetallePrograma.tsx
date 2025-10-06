@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Hotel, Star, Check, MapPin } from "lucide-react";
+import { Hotel, Check, MapPin } from "lucide-react";
 import {
   Bloqueos,
   Detalle,
