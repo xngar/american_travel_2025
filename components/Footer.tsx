@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <footer
       id="contacto"
-      className="bg-gris-claro  text-white flex flex-col  justify-center items-center  "
+      className="bg-gris-oscuro  text-white flex flex-col  justify-center items-center  "
     >
       {/* NECESITAS AYUDAS? */}
       <div className="flex flex-col md:flex-row justify-around items-center gap-4 w-full pb-10 pt-8 bg-gris-oscuro">
@@ -54,7 +54,7 @@ const Footer = () => {
 
       {/* FOOTER LINKS */}
 
-      <div className="flex flex-col gap-7 md:flex-row md:justify-around w-full justify-center items-center bg-gris-claro">
+      <div className="flex flex-col gap-7 md:flex-row md:justify-around w-full justify-center items-center bg-gris-oscuro ">
         <div>
           <Image src="/gira.png" width={200} height={200} alt="logo" />
         </div>
@@ -184,10 +184,10 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-10 bg-gris-claro">
+      <div className="mt-10 bg-gris-oscuro">
         <p>© 2025: American Travel Tour</p>
       </div>
-      <div className=" bg-gris-claro">
+      <div className=" bg-gris-oscuro">
         <p className="text-xs">
           Sitio desarrollado por{" "}
           <a href="www.upcode.cl" target="_blank">
