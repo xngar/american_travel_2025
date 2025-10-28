@@ -2,6 +2,7 @@
 import { Exchange, getProgramaListadoDetalle } from "@/app/api/Services";
 import { Program, ResponseExchange } from "@/app/interfaces/interfaces";
 import Destinos_destacados from "@/components/Destinos_destacados";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -59,18 +60,23 @@ const Page = () => {
               <SkeletonCard key={index} />
             ))
           : programas.map((programa) => (
-              <Destinos_destacados
+              <Link
+                href={`/detalle-programa/${programa.IdPrograma}`}
                 key={programa.IdPrograma}
-                Titulo={programa.Titulo}
-                Dias={programa.Dias.toString()}
-                Noches={programa.Noches.toString()}
-                Precio={programa.Precio.toString()}
-                Hotels={programa.ValoresProgramas[0]?.Hotel}
-                ValorPersona={programa.ValoresProgramas[0]?.Text}
-                ImagenDestino={programa.UrlImage}
-                IdPrograma={programa.IdPrograma}
-                cambio={cambio}
-              />
+              >
+                <Destinos_destacados
+                  key={programa.IdPrograma}
+                  Titulo={programa.Titulo}
+                  Dias={programa.Dias.toString()}
+                  Noches={programa.Noches.toString()}
+                  Precio={programa.Precio.toString()}
+                  Hotels={programa.ValoresProgramas[0]?.Hotel}
+                  ValorPersona={programa.ValoresProgramas[0]?.Text}
+                  ImagenDestino={programa.UrlImage}
+                  IdPrograma={programa.IdPrograma}
+                  cambio={cambio}
+                />
+              </Link>
             ))}
       </div>
     </div>

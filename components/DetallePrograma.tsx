@@ -183,63 +183,41 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
           )}
 
           {/* Info destino */}
-          <div className="mt-2 w-[100%]">
-            <h2 className="font-bold">Información del Destino</h2>
-            {(() => {
-              // Buscar itinerario de tipo "1"
-              const itinerarioTipo1 = data?.Itinerarios?.find(
-                (it) => it.Tipo === "1"
-              );
-
-              // Si existe itinerario tipo 1 y tiene contenido en el cuerpo
-              if (
-                itinerarioTipo1 &&
-                itinerarioTipo1.Cuerpo &&
-                itinerarioTipo1.Cuerpo.trim() !== ""
-              ) {
-                return (
-                  <div className="mb-4 text-justify">
-                    <p>{itinerarioTipo1.Cuerpo}</p>
-                  </div>
+          <div className="flex flex-row">
+            <div className=" w-[55%] p-5">
+              <h2 className="font-bold">Información del Destino</h2>
+              {(() => {
+                // Buscar itinerario de tipo "1"
+                const itinerarioTipo1 = data?.Itinerarios?.find(
+                  (it) => it.Tipo === "1"
                 );
-              } else {
-                // Si no tiene información, mostrar video
-                return (
-                  <div className="relative md:w-1/2 aspect-video overflow-hidden rounded-md">
-                    <div
-                      className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
-                      dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
-                    />
-                  </div>
-                );
-              }
-            })()}
-          </div>
-        </div>
 
-        {/* Valores */}
-      </div>
-
-      {/* Incluye */}
-      {data?.Incluyes?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4  rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
-          <div className="md:w-1/2">
-            <h2 className="bg-gris-oscuro p-2  text-white">
-              El programa Incluye
-            </h2>
-            <ul className="list-none mt-2">
-              {data.Incluyes.map((inc, idx) => (
-                <li key={idx} className="flex items-center text-justify">
-                  <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />{" "}
-                  <span>{inc.Texto}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="md:w-1/2 flex flex-col md:flex-col gap-4 items-center">
-            {/* PRECIOS */}
+                // Si existe itinerario tipo 1 y tiene contenido en el cuerpo
+                if (
+                  itinerarioTipo1 &&
+                  itinerarioTipo1.Cuerpo &&
+                  itinerarioTipo1.Cuerpo.trim() !== ""
+                ) {
+                  return (
+                    <div className="mb-4 text-justify">
+                      <p>{itinerarioTipo1.Cuerpo}</p>
+                    </div>
+                  );
+                } else {
+                  // Si no tiene información, mostrar video
+                  return (
+                    <div className="relative md:w-1/2 aspect-video overflow-hidden rounded-md">
+                      <div
+                        className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
+                        dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
+                      />
+                    </div>
+                  );
+                }
+              })()}
+            </div>
             <div>
-              <div className=" w-[450px] h-[240px] mx-auto flex flex-col -mt-2 rounded-sm p-3 relative">
+              <div className=" w-[450px] h-[240px] mx-auto flex flex-col  rounded-sm relative">
                 {/* <div className="bg-blue-500 p-2 absolute -top-5 right-0 rounded-md text-sm flex text-white">
                   <Star className="mr-2" /> {data?.Texto}
                 </div> */}
@@ -257,60 +235,11 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
                 <span>{data?.Texto}</span>
               </div>
             </div>
-            <div className="relative md:w-[80%] aspect-video overflow-hidden rounded-md">
-              <div
-                className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
-                dangerouslySetInnerHTML={{ __html: data?.Video || "" }}
-              />
-            </div>
           </div>
         </div>
-      )}
 
-      {/* Itinerario */}
-      {data?.Itinerarios?.length > 1 && (
-        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
-          <h2 className="bg-gris-oscuro p-2  text-white">Itinerario</h2>
-          {data.Itinerarios.filter((x) => x.Tipo != "1")
-            .sort((a, b) => a.IdItinerario - b.IdItinerario)
-            .map((it) => (
-              <div key={it.Dia} className="mb-4">
-                <h3 className="font-bold text-lg">
-                  Día {it.Dia} | {it.Actividad}
-                </h3>
-                <p className="text-justify">{it.Cuerpo}</p>
-              </div>
-            ))}
-        </div>
-      )}
-
-      {/* Condiciones */}
-      {data?.Condiciones?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4 rounded-md p-4 mb-4">
-          <h2 className="bg-gris-oscuro p-2  text-white">
-            Condiciones del Programa
-          </h2>
-          {data.Condiciones.map((c, idx) => (
-            <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-gris-oscuro w-4" />
-              <p>{c.Texto}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Actividades */}
-      {data?.Actividades?.length > 0 && (
-        <div className="w-[80%] mx-auto mt-4   rounded-md p-4 mb-4">
-          <h2 className="bg-gris-oscuro p-2  text-white">Observaciones</h2>
-          {data.Actividades.map((act, idx) => (
-            <div key={idx} className="mt-2 flex">
-              <Check className="mr-2 text-gris-oscuro w-4" />
-              <p>{act.Texto}</p>
-            </div>
-          ))}
-        </div>
-      )}
+        {/* Valores */}
+      </div>
 
       {/* VUELOS - Se renderiza solo si hay vuelos */}
       {EspaciosConfirmados({ Bloqueos: data?.Vuelos || [] })}
@@ -394,6 +323,80 @@ export default function DetallePrograma({ programa }: { programa: Program }) {
               </tbody>
             </table>
           </div>
+        </div>
+      )}
+
+      {/* Incluye y Video */}
+      {data?.Incluyes?.length > 0 && (
+        <div className="w-[80%] mx-auto mt-4  rounded-md p-4 flex flex-col md:flex-row gap-4 justify-between">
+          <div className={`${!data?.Video ? "w-full" : "md:w-1/2"}`}>
+            <h2 className="bg-gris-oscuro p-2  text-white">
+              El programa Incluye
+            </h2>
+            <ul className="list-none mt-2">
+              {data.Incluyes.map((inc, idx) => (
+                <li key={idx} className="flex items-center text-justify">
+                  <Check className="mr-2 text-gris-oscuro w-4 flex-shrink-0" />{" "}
+                  <span>{inc.Texto}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {data?.Video && (
+            <div className="md:w-1/2 flex flex-col md:flex-col gap-4 items-center">
+              <div className="relative md:w-[80%] aspect-video overflow-hidden rounded-md">
+                <div
+                  className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full"
+                  dangerouslySetInnerHTML={{ __html: data.Video }}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Itinerario */}
+      {data?.Itinerarios?.length > 1 && (
+        <div className="w-[80%] mx-auto mt-4 border-2 border-black/10 rounded-md p-4 mb-4">
+          <h2 className="bg-gris-oscuro p-2  text-white">Itinerario</h2>
+          {data.Itinerarios.filter((x) => x.Tipo != "1")
+            .sort((a, b) => a.IdItinerario - b.IdItinerario)
+            .map((it) => (
+              <div key={it.Dia} className="mb-4">
+                <h3 className="font-bold text-lg">
+                  Día {it.Dia} | {it.Actividad}
+                </h3>
+                <p className="text-justify">{it.Cuerpo}</p>
+              </div>
+            ))}
+        </div>
+      )}
+
+      {/* Condiciones */}
+      {data?.Condiciones?.length > 0 && (
+        <div className="w-[80%] mx-auto mt-4 rounded-md p-4 mb-4">
+          <h2 className="bg-gris-oscuro p-2  text-white">
+            Condiciones del Programa
+          </h2>
+          {data.Condiciones.map((c, idx) => (
+            <div key={idx} className="mt-2 flex">
+              <Check className="mr-2 text-gris-oscuro w-4" />
+              <p>{c.Texto}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Actividades */}
+      {data?.Actividades?.length > 0 && (
+        <div className="w-[80%] mx-auto mt-4   rounded-md p-4 mb-4">
+          <h2 className="bg-gris-oscuro p-2  text-white">Observaciones</h2>
+          {data.Actividades.map((act, idx) => (
+            <div key={idx} className="mt-2 flex">
+              <Check className="mr-2 text-gris-oscuro w-4" />
+              <p>{act.Texto}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>

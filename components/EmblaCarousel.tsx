@@ -116,6 +116,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     ImagenDestino={programas.UrlImage}
                     IdPrograma={programas.IdPrograma}
                     cambio={cambio}
+                    subtitulo={programas.Subtitulo}
                   />
                 </div>
               ))}

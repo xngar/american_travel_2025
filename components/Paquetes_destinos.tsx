@@ -63,20 +63,6 @@ const Paquetes_destinos = () => {
                 </div>
               </Link>
             ))}
-
-        {/* <div className="flex justify-center items-center bg-gradient-to-t">
-          <div className="w-[300px] h-[500px] p-5 relative ">
-            <Image
-              src="/paq_4.jpg"
-              layout="fill"
-              objectFit="cover"
-              alt="chile"
-              className="rounded-4xl  shadow-md"
-            />
-            <h2 className="botones-paquetes">Verano 2025</h2>
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-blue-800 to-transparent z-10 rounded-4xl"></div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
